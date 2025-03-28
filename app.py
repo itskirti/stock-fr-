@@ -16,7 +16,7 @@ close_price = st.sidebar.number_input("Close Price", min_value=0.0, format="%.2f
 
 if st.sidebar.button("Predict"):  # Predict button
     user_features = [open_price, high_price, low_price, volume, close_price]
-    api_url = "http://127.0.0.1:8000/predict"  # Update if hosted externally
+    api_url = "https://stock-backend-baxo.onrender.com/predict"  # Update if hosted externally
 
     try:
         response = requests.post(api_url, json={"features": user_features})
